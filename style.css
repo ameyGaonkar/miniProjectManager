@@ -122,3 +122,10 @@ form .inputGroup input[type="button"]{
 form .inputGroup.optionalTeammate{
     display: none;
 }
+
+.displayName{
+    padding: 0 15px;
+    color: #fff;
+    font-weight: 300;
+    font-style: italic;
+}
