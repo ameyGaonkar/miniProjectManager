@@ -8,14 +8,19 @@
     font-family: "Spline Sans Mono", monospace;
 }
 
+body{
+    background-color: #03121f;
+}
+
 .container{
     width: 100%;
+    max-width: 650px;
     height: 100vh;
+    margin: auto;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    background-color: #03121f;
 }
 
 .navbar{
