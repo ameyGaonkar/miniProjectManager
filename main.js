@@ -30,6 +30,7 @@ function findName(ele){
                 admNo: admNo
             },
             success: function(response){
+                console.log(response)
                 if(JSON.parse(response).status == 'success'){
                     ele.nextElementSibling.innerText = JSON.parse(response).data;
                 } else if(JSON.parse(response).status == 'error'){
