@@ -2,9 +2,6 @@
 
 require 'connect.php';
 
-echo json_encode(array('status' => 'success', 'data' => $_POST['admNo']));
-die();
-
 $stmt = $con->prepare("SELECT id,name FROM students WHERE admissionNo = :admNo");
 $stmt->bindParam(':admNo', $_POST['admNo']);
 $stmt->execute();
