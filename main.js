@@ -18,13 +18,4 @@ function removeTeammate() {
     lastTeammate.getElementsByTagName('input')[0].value = '';
     lastTeammate.style.display = 'none';
     optionalTeammates.unshift(lastTeammate);
-    console.log(lastTeammate);
-}
-
-function findName(ele){
-    if(ele.value.length === 7){
-        ele.nextSibling.nextSibling.innerText = "Hello";
-    } else {
-        ele.nextSibling.nextSibling.innerText = "";
-    }
 }
