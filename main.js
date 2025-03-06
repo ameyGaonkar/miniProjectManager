@@ -52,10 +52,10 @@ $("#projectForm").submit(function(event) {
         data: formData,
         success: function(response) {
             if(JSON.parse(response).status == 'error'){
-                $('#modalType').addClass('error');
+                $('#modalType').removeClass().addClass('error');
                 $('#modalType h2').text('Error');
             } else if(JSON.parse(response).status == 'success'){
-                $('#modalType').addClass('success');
+                $('#modalType').removeClass().addClass('success');
                 $('#modalType h2').text('Success');
                 $(".displayName").empty();
                 document.getElementById("projectForm").reset();

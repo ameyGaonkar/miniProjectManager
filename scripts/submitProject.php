@@ -25,7 +25,7 @@ if (!empty($_POST['topic']) && !empty($_POST['description']) && !empty($admissio
                 if ($insertTeam->rowCount() == 0) {
                     $con->rollBack();
                     echo json_encode(array('status' => 'error', 'message' => 'Admission Number Not Found'));
-                    exit();
+                    die();
                 }
             }
         }

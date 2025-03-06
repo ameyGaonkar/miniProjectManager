@@ -165,3 +165,7 @@ form .inputGroup.optionalTeammate{
 .modalContent .success h2{
     color: #008311;
 }
+
+.modalContent .error h2{
+    color: #c00000;
+}
