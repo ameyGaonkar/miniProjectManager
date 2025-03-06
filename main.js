@@ -19,3 +19,53 @@ function removeTeammate() {
     lastTeammate.style.display = 'none';
     optionalTeammates.unshift(lastTeammate);
 }
+
+function findName(ele){
+    let admNo = ele.value;
+    if(admNo.length == 7){
+        $.ajax({
+            url: './scripts/findName.php',
+            method: 'POST',
+            data: {
+                admNo: admNo
+            },
+            success: function(response){
+                if(JSON.parse(response).status == 'success'){
+                    ele.nextElementSibling.innerText = JSON.parse(response).data;
+                }
+            }
+        });
+    }else{
+        ele.nextElementSibling.innerText = '';
+    }
+}
+
+
+$("#projectForm").submit(function(event) {
+    event.preventDefault(); 
+
+    var formData = $(this).serialize();
+
+    $.ajax({
+        type: "POST",
+        url: "./scripts/submitProject.php",
+        data: formData,
+        success: function(response) {
+            if(JSON.parse(response).status == 'error'){
+                $('#modalType').addClass('error');
+                $('#modalType h2').text('Error');
+            } else if(JSON.parse(response).status == 'success'){
+                $('#modalType').addClass('success');
+                $('#modalType h2').text('Success');
+                $(".displayName").empty();
+                document.getElementById("projectForm").reset();
+            }
+            $('#modalType p').text(JSON.parse(response).message);
+            document.getElementsByClassName('modal')[0].style.display = 'flex';
+        }
+    });
+});
+
+function closeModal(){
+    document.getElementsByClassName('modal')[0].style.display = 'none';
+}

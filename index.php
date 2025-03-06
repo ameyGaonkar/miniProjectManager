@@ -17,25 +17,25 @@
         </div>
         <div class="content">
             <h2>Lets begin...</h2>
-            <form method="POST" action="submitTopicScript.php">
+            <form id="projectForm">
                 <div class="inputGroup">
                     <label for="student1">Who are you?</label>
-                    <input type="number" id="student1" name="student1" placeholder="Your Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045" required>
+                    <input type="number" id="student1" name="students[]" placeholder="Your Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045" required>
                     <div class="displayName"></div>
                 </div>
                 <div class="inputGroup">
                     <label for="student2">Your Teammate 1</label>
-                    <input type="number" id="student2" name="student2" placeholder="Teammate 1: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045" required>
+                    <input type="number" id="student2" name="students[]" placeholder="Teammate 1: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045" required>
                     <div class="displayName"></div>
                 </div>
                 <div class="inputGroup optionalTeammate">
                     <label for="student3">Your Teammate 2</label>
-                    <input type="number" id="student3" name="student3" placeholder="Teammate 2: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045">
+                    <input type="number" id="student3" name="students[]" placeholder="Teammate 2: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045">
                     <div class="displayName"></div>
                 </div>
                 <div class="inputGroup optionalTeammate">
                     <label for="student4">Your Teammate 3</label>
-                    <input type="number" id="student4" name="student4" placeholder="Teammate 3: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045">
+                    <input type="number" id="student4" name="students[]" placeholder="Teammate 3: Admission Number" onkeyup="findName(this)" minlength="7" maxlength="7" min="2305000" max="2305045">
                     <div class="displayName"></div>
                 </div>
                 <div class="inputGroup">
@@ -47,13 +47,23 @@
                     <input type="text" id="topic" name="topic" placeholder="Enter your Topic" required>
                 </div>
                 <div class="inputGroup">
-                    <label for="description">Description</label>
-                    <textarea id="description" name="description" placeholder="Enter your Description" rows="8" required></textarea>
+                    <label for="description">Tell me more...</label>
+                    <textarea id="description" name="description" placeholder="Describe your topic briefly here." rows="8" required></textarea>
                 </div>
                 <div class="inputGroup">
                     <input type="submit" value="Submit Topic">
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="modal">
+        <div class="modalContent">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalType">
+                <h2>Success</h2>
+                <p>Your project has been submitted successfully.</p>
+            </div>
         </div>
     </div>
 
