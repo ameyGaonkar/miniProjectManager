@@ -18,5 +18,4 @@ function removeTeammate() {
     lastTeammate.getElementsByTagName('input')[0].value = '';
     lastTeammate.style.display = 'none';
     optionalTeammates.unshift(lastTeammate);
-    console.log(lastTeammate);
 }
