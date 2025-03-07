@@ -3,6 +3,39 @@ window.onload = function() {
     optionalTeammates = Array.from(document.getElementsByClassName('optionalTeammate'));
 };
 
+function displayStatus(){
+    $.ajax({
+        type: 'POST',
+        url: './scripts/checkStatus.php',
+        data: {
+            admNo: document.getElementById('student').value
+        },
+        success: function(response){
+            res = JSON.parse(response);
+            if(res.status == 'success'){
+                let rows = '', status = '';
+                if(res.data.status == 'Pending'){
+                    status = '<i class="fa-solid fa-hourglass-half"></i> Pending';
+                } else if(res.data.status == 'Approved'){
+                    status = '<i class="fa-solid fa-check"></i> Approved';
+                } else if(res.data.status == 'Rejected'){
+                    status = '<i class="fa-solid fa-times"></i> Rejected';
+                }
+                res.data.team.map(member => {rows += '<tr><td>'+member.admissionNo+'</td><td>'+member.name+'</td></tr>'});
+                document.getElementById('projectSection').innerHTML = '<div class="project">'
+                                        +'<div id="topic">'+res.data.topic+'</div>'
+                                        +'<div id="status">'+status +'</div>'
+                                        +'<table>'
+                                        +rows
+                                        +'</table>'
+                                    +'</div>';
+            } else if(res.status == 'error'){
+                document.getElementById('status').innerText = res.message;
+            }
+        }
+    });
+}
+
 function addTeammate() {
     if (optionalTeammates.length === 0) {
         alert('No more teammates can be added!');
@@ -72,3 +105,4 @@ $("#projectForm").submit(function(event) {
 function closeModal(){
     document.getElementsByClassName('modal')[0].style.display = 'none';
 }
+

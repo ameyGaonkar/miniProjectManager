@@ -169,3 +169,46 @@ form .inputGroup.optionalTeammate{
 .modalContent .error h2{
     color: #c00000;
 }
+
+.project{
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ffd000;
+    border-radius: 6px;
+    background-color: #03121f;
+    color: #fff;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color 250ms ease-in, color 200ms ease-in;
+    position: relative;
+}
+
+.project:hover{
+    background-color: #ffd000;
+    color: #03121f;
+}
+
+.project #topic{
+    margin-top: 15px;
+    padding: 15px 5px;
+    font-size: 1.7em;
+    font-weight: 700;
+}
+
+.project #status{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: 700;
+}
+
+.project table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.project table tr td{
+    padding: 12px;
+}
+
