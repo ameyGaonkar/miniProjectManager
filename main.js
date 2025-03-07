@@ -30,7 +30,8 @@ function displayStatus(){
                                         +'</table>'
                                     +'</div>';
             } else if(res.status == 'error'){
-                document.getElementById('status').innerText = res.message;
+                alert(res.message);
+                document.getElementById('checkStatusForm').reset();
             }
         }
     });
