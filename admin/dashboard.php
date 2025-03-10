@@ -57,6 +57,7 @@ if (!isset($_SESSION['username'])) {
                                 <td><?php echo $srNo; ?>.</td>
                                 <td width="50%">
                                     <h2 class="projectTitle"><?php echo $project['topic']; ?></h2>
+                                    <p class="dateDisplay"><?php echo date('d M Y, h:ia', strtotime($project['createdAt'])); ?></p>
                                     <div class="projectDescription">
                                         <?php echo $project['description']; ?>
                                     </div>

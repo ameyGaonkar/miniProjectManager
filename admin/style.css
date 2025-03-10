@@ -89,6 +89,13 @@ body{
 
 .projectTitle{
     color: #ffd000;
+    margin-bottom: 3px;
+}
+
+.dateDisplay{
+    font-style: italic; 
+    font-size: 0.7em;
+    color: #8aaece;
     margin-bottom: 15px;
 }
 
