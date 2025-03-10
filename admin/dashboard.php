@@ -40,7 +40,7 @@ if (!isset($_SESSION['username'])) {
                     require './../scripts/connect.php';
 
                     $srNo = 1;
-                    $getProjects = $con->prepare("SELECT * FROM projects");
+                    $getProjects = $con->prepare("SELECT * FROM projects ORDER BY status DESC, createdAt ASC");
                     $getProjects->execute();
 
                     if ($getProjects->rowCount() > 0) {
