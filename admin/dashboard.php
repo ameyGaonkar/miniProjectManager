@@ -77,6 +77,7 @@ if (!isset($_SESSION['username'])) {
                                         <option value="Pending" <?php echo $project['status'] == 'Pending' ? 'selected' : NULL; ?>>Pending</option>
                                         <option value="Approved" <?php echo $project['status'] == 'Approved' ? 'selected' : NULL; ?>>Approved</option>
                                         <option value="Rejected" <?php echo $project['status'] == 'Rejected' ? 'selected' : NULL; ?>>Rejected</option>
+                                        <option value="Completed" <?php echo $project['status'] == 'Completed' ? 'selected' : NULL; ?>>Completed</option>
                                     </select>
                                 </td>
                             </tr>
